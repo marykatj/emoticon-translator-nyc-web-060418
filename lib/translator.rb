@@ -7,14 +7,15 @@ def load_library
 end
 
 def get_japanese_emoticon(english_emoticon, translator)
-  new_hash = {}
+  translated_item = ""
   translator.each do |meaning|
     meaning.each do |english, japanese|
       if english_emoticon == english
-        return japanese
+        translated_item = japanese
       end
     end
   end
+  translated_item
 end
 
 def get_english_meaning

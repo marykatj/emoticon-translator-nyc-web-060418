@@ -9,8 +9,8 @@ def load_library(path)
   translator_hash["meaning"] = Hash.new
 
   translator.each do |english, emoticon_group|
-   translator_hash["emoticon"][emoticon_group.first] = emoticon_group.last
-   translator_hash["meaning"][emoticon_group.last] = english
+  translator_hash["emoticon"][emoticon_group.first] = emoticon_group.last
+  translator_hash["meaning"][emoticon_group.last] = english
  end
  emoticon_hash
 end

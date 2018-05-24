@@ -1,8 +1,8 @@
 require 'yaml'
 # require modules here
 
-def load_library(emoticons.yml)
-  translator = YAML.load_file
+def load_library
+  translator = YAML.load_file(emoticons.yml)
   translator
 end
 

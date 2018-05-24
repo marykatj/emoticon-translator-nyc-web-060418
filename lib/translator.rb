@@ -15,14 +15,11 @@ def load_library(path)
  emoticon_hash
 end
 
-def get_japanese_emoticon(english_emoticon, translator)
-  translated_item = ""
-  translator.each do |meaning|
-    meaning.each do |english, japanese|
-      if english_emoticon == english
-        translated_item = japanese
-      end
-    end
+def get_japanese_emoticon(path, english_emoticon)
+  emoticon_hash = load_library(path)
+  translated_item = emoticon_hash["emoticon"][emoticon]
+  if translated_item == nil
+    translated_item = "Sorry, that emoticon was not found"
   end
   translated_item
 end

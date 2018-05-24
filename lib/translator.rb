@@ -3,7 +3,16 @@ require 'yaml'
 
 def load_library(path)
   translator = YAML.load_file(path)
-  translator
+  translator_hash = Hash.new
+
+  translator_hash["emoticon"] = Hash.new
+  translator_hash["meaning"] = Hash.new
+
+  translator.each do |english, emoticon_group|
+   translator_hash["emoticon"][emoticon_group.first] = emoticon_group.last
+   translator_hash["meaning"][emoticon_group.last] = english
+ end
+ emoticon_hash
 end
 
 def get_japanese_emoticon(english_emoticon, translator)
